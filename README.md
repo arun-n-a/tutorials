@@ -1,3 +1,8 @@
+Tutorials
+
 Python 3.x
-for beginners
- 
+Django
+Flask
+GitHub
+Selenium Automation
+TensorFlow

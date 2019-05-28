@@ -1,0 +1,8 @@
+                       Django
+Reference:
+        Tutorial 1: https://tutorial.djangogirls.org/en/
+	Tutorial 2: https://docs.djangoproject.com/en/2.2/intro/
+	Tutorial 3: https://docs.djangoproject.com/en/2.2/
+
+
+Start learning django in the above order.

@@ -1,2 +1,66 @@
 References:
+  https://medium.com/@mtngt/docker-flask-a-simple-tutorial-bbcb2f4110b5
   https://www.tutorialspoint.com/docker/docker_file.htm
+
+Install docker in ubuntu 18:
+    https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+Check docker version:
+    $ docker -v
+              
+              Docker + Flask app
+Step 1: Create a folder to hold the project
+          $ mkdir hello_docker_flask
+Step 2: Navigate to the project folder
+          $ cd hello_docker_flask
+Step 3: Check any container is running 
+          sudo docker ps
+Step 4: Have some currently running and want to kill them?
+          $ sudo docker kill <CONTAINER ID>
+Step 5: You can also check to see if you have any containers even if they are not running.
+          $ sudo docker images
+Step 6: Want to clear out all the not running stuff as well?
+          $ sudo docker system prune -a
+Step 7: First we need a simple flask file. Create a new file in your hello_docker_flask folder
+        called app.py with some basic flask code in it.
+        
+                # app.py - a minimal flask api using flask_restful
+                from flask import Flask
+                from flask_restful import Resource, Api
+
+                app = Flask(__name__)
+                api = Api(app)
+
+                class HelloWorld(Resource):
+                    def get(self):
+                        return {'hello': 'world'}
+
+                api.add_resource(HelloWorld, '/')
+
+                if __name__ == '__main__':
+                    app.run(debug=True, host='0.0.0.0')
+
+Step 8: Create a requirements.txt file inside the directory hello_docker_flask and here add all the
+        python libraries required for our app. Example given below:
+              flask
+              flask_restful
+Step 9: Create a docker file in the same directory. It is just called Dockerfile, no extensions, no suffix.
+              # Dockerfile - this is a comment. Delete me if you want.
+              FROM python:2.7
+              COPY . /app
+              WORKDIR /app
+              RUN pip install -r requirements.txt
+              ENTRYPOINT ["python"]
+              CMD ["app.py"]
+
+Step 9 Explanation: This Dockerfile copies our current folder, . , into our container folder /app .
+      It sets that folder as the working directory, installs all our requirements with pip install from requirements.txt,
+      and then runs the file using python app.py.
+                  The hello_docker_flask folder looks like this.
+                                      hello_docker_flask
+                                      │
+                                      └───requirements.txt
+                                      │
+                                      └───Dockerfile
+                                      │
+                                      └───app.py
+Step 10:  

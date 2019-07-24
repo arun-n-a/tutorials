@@ -1,0 +1,5 @@
+
+Reference 1: http://www.linuxandubuntu.com/home/10-basic-linux-commands-that-every-linux-newbies-should-remember
+Reference 2: https://vitux.com/40-most-used-ubuntu-commands/
+Reference 3: https://www.guru99.com/must-know-linux-commands.html
+Reference 4: https://www.codecademy.com/articles/command-line-commands

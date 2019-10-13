@@ -1,8 +1,7 @@
 			GitHub
 Reference:
-	https://guides.github.com/introduction/git-handbook/
-	https://github.github.com/training-kit/downloads/github-git-cheat-sheet
-	https://rubygarage.org/blog/most-basic-git-commands-with-examples
+	1. https://www.atlassian.com/git/tutorials/
+  	2. https://try.github.io/
 	
 			Git Cheat Sheet
 Git: Configurations
